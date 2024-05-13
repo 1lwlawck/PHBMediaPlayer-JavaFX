@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.media.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane fx:id="bPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="phbmediaplayer.FXMLDocumentController">
+   <bottom>
+      <VBox prefHeight="50.0" BorderPane.alignment="CENTER">
+         <children>
+            <Slider fx:id="volume" />
+            <HBox alignment="CENTER" prefHeight="50.0">
+               <children>
+                  <MenuButton mnemonicParsing="false" text="Options">
+                    <items>
+                      <MenuItem fx:id="openFiles" mnemonicParsing="false" onAction="#openFiles" text="Open File(s)" />
+                      <MenuItem mnemonicParsing="false" text="Open Folder" />
+                        <MenuItem mnemonicParsing="false" text="Open Playlist" />
+                    </items>
+                  </MenuButton>
+                  <Button mnemonicParsing="false" onAction="#seekBackward" text="&lt;&lt;" />
+                  <Button mnemonicParsing="false" onAction="#backward" text="&lt;" />
+                  <Button mnemonicParsing="false" onAction="#stop" text="Stop" />
+                  <Button fx:id="playPause" mnemonicParsing="false" onAction="#pausePlay" text="Play" />
+                  <Button mnemonicParsing="false" onAction="#forward" text="&gt;" />
+                  <Button mnemonicParsing="false" onAction="#seekForward" text="&gt;&gt;" />
+                  <Slider fx:id="volume" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </bottom>
+   <center>
+      <StackPane fx:id="sPanemed" prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <MediaView fx:id="mediaView" fitHeight="200.0" fitWidth="200.0" />
+         </children>
+      </StackPane>
+   </center>
+</BorderPane>
